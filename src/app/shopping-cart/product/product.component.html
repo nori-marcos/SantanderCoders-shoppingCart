@@ -1,0 +1,79 @@
+<div class="card-top container-fluid">
+  <div class="container d-flex mt-1">
+    <div class="item">
+      <a>
+        <img src="../../../assets/florist.png" alt="" />
+        <h6>Todos</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img src="../../../assets/bouquet.png" alt="" />
+        <h6>Buquês</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img src="../../../assets/vase.png" alt="" />
+        <h6>Vasos</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img src="../../../assets/arrangements.png" alt="" />
+        <h6>Arranjos</h6>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <ng-container *ngFor="let item of productList">
+      <div class="card col-md-3 p-2 m-3">
+        <img src="{{ item.image }}" alt="" />
+        <h5
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ item.title }}
+        </h5>
+        <p
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ item.description }}
+        </p>
+        <p><strong>Preço: </strong>R${{ item.price }}</p>
+        <div class="d-flex justify-content-center">
+          <button
+            class="btn btn-warning btn-sm m-3"
+            type="button"
+            (click)="decrease(item)"
+          >
+            <i class="fa fa-minus" aria-hidden="true"></i>
+          </button>
+          <span class="m-3">{{ item.quantity }}</span>
+          <button
+            class="btn btn-warning btn-sm m-3"
+            type="button"
+            (click)="increase(item)"
+          >
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+        <button class="btn btn-success" type="button" (click)="addCart(item)">
+          Adicionar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

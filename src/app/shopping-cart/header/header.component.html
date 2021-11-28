@@ -1,0 +1,30 @@
+<header>
+  <div class="navbar navbar-dark bg-danger">
+    <div class="navbar-brand align-items-center d-flex">
+      <span style="font-size: 40px" class="fa fa-gift" aria-hidden="true"
+        >&nbsp;</span
+      >
+      <strong style="font-size: 30px" routerLink="products"
+        >La Casa de las Flores &nbsp;</strong
+      >
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="procurar produtos"
+        />
+      </div>
+      <span class="fa fa-search m-2"></span>
+    </div>
+    <button class="btn btn-danger" type="button" routerLink="cart">
+      <i
+        class="fa fa-shopping-cart"
+        style="font-size: 25px"
+        aria-hidden="true"
+      ></i>
+      <span class="badge bg-warning m-1" style="font-size: 15px">
+        {{ cartItem }}</span
+      >
+    </button>
+  </div>
+</header>

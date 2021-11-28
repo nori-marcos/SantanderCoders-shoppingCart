@@ -1,0 +1,103 @@
+<ng-container *ngIf="products.length != 0">
+  <div class="container">
+    <div class="card-table">
+      <div class="cart-product">
+        <table class="table table-responsive">
+          <thead>
+            <th>No</th>
+            <th>Nome</th>
+            <th>Imagem</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+            <th>Ação</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.title }}</td>
+              <td>
+                <img style="width: 120px" src="{{ item.image }}" alt="" />
+              </td>
+              <td style="width: 25%">{{ item.description }}</td>
+              <td style="width: 12%">R${{ item.price }}</td>
+              <td style="width: 12%">
+                <button
+                  (click)="decreaseQuantity(item.id, item.quantity)"
+                  class="btn btn-warning btn-sm"
+                  type="button"
+                >
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+                <span class="m-1">
+                  {{ item.quantity }}
+                </span>
+                <button
+                  (click)="increaseQuantity(item.id, item.quantity)"
+                  class="btn btn-warning btn-sm"
+                  type="button"
+                >
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </td>
+              <td style="width: 12%">R${{ item.quantity * item.price }}</td>
+              <td>
+                <button
+                  (click)="singleDelete(item)"
+                  class="btn btn-danger btn-sm"
+                  type="button"
+                >
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+              <td>
+                <button
+                  (click)="removeAll()"
+                  class="btn btn-danger"
+                  type="button"
+                >
+                  Esvaziar
+                </button>
+              </td>
+              <td>
+                <button
+                  routerLink="/products"
+                  class="btn btn-warning"
+                  type="button"
+                >
+                  Adicionar
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-success" type="button">Finalizar</button>
+              </td>
+              <td>
+                <strong>Total: R${{ grandTotal }}</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+  <div class="container p-3">
+    <div class="card">
+      <h5 class="card-title">Meu carrinho</h5>
+    </div>
+    <div class="center">
+      <img src="../../../assets/empty-cart.png" alt="" />
+      <h4>Seu carrinho está vazio!</h4>
+      <h6>Quer adicionar produtos?</h6>
+      <button routerLink="/products" class="btn btn-success" type="button">
+        Ir às compras!
+      </button>
+    </div>
+  </div>
+</ng-container>

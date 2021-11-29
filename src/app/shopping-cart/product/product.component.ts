@@ -15,7 +15,7 @@ export class ProductComponent implements OnInit {
       description:
         "As tulipas são flores elegantes e sofisticadas, e o maior significado é de 'amor perfeito'.",
       category: 'bouquet',
-      image: 'assets/tulipe.png',
+      image: './assets/tulipe.png',
       quantity: 1,
     },
     {
@@ -25,7 +25,7 @@ export class ProductComponent implements OnInit {
       description:
         'Os crisântemos são flores muito apreciadas na Ásia. A flor possui inúmeros significados como longevidade, rejuvenescimento, prosperidade, alegria, otimismo e fidelidade.',
       category: 'bouquet',
-      image: 'assets/chrysanthemum.png',
+      image: './assets/chrysanthemum.png',
       quantity: 1,
     },
     {
@@ -35,7 +35,7 @@ export class ProductComponent implements OnInit {
       description:
         'As dálias são nativas do México e possuem diversas cores e tamanhos. As flores são o símbolo da união, comprometimento e esperança.',
       category: 'bouquet',
-      image: 'assets/dahlia.png',
+      image: './assets/dahlia.png',
       quantity: 1,
     },
     {
@@ -45,7 +45,7 @@ export class ProductComponent implements OnInit {
       description:
         'Os lírios, de modo geral, são associados ao romantismo e simbolizam a pureza, a inocência e o amor puro.',
       category: 'bouquet',
-      image: 'assets/lirium.png',
+      image: './assets/lirium.png',
       quantity: 1,
     },
     {
@@ -55,7 +55,7 @@ export class ProductComponent implements OnInit {
       description:
         'As orquídeas são flores extraordinárias e são associadas ao amor, autoridade, poder, desejo e sedução.',
       category: 'bouquet',
-      image: 'assets/orchid.png',
+      image: './assets/orchid.png',
       quantity: 1,
     },
     {
@@ -65,7 +65,7 @@ export class ProductComponent implements OnInit {
       description:
         'O girassol é a flor do sol e significa felicidade. Suas cores quentes podem simbolizar calor, lealdade, entusiasmo e vitalidade.',
       category: 'bouquet',
-      image: 'assets/sunflower.png',
+      image: './assets/sunflower.png',
       quantity: 1,
     },
   ];
